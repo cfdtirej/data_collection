@@ -1,0 +1,232 @@
+{
+    "札幌": {
+        "place": "札幌",
+        "prec_no": 14,
+        "block_no": 47412
+    },
+    "室蘭": {
+        "place": "室蘭",
+        "prec_no": 21,
+        "block_no": 47423
+    },
+    "函館": {
+        "place": "函館",
+        "prec_no": 23,
+        "block_no": 47430
+    },
+    "青森": {
+        "place": "青森",
+        "prec_no": 31,
+        "block_no": 47575
+    },
+    "秋田": {
+        "place": "秋田",
+        "prec_no": 32,
+        "block_no": 47582
+    },
+    "盛岡": {
+        "place": "盛岡",
+        "prec_no": 33,
+        "block_no": 47584
+    },
+    "山形": {
+        "place": "山形",
+        "prec_no": 35,
+        "block_no": 47588
+    },
+    "仙台": {
+        "place": "仙台",
+        "prec_no": 34,
+        "block_no": 47590
+    },
+    "福島": {
+        "place": "福島",
+        "prec_no": 36,
+        "block_no": 47595
+    },
+    "新潟": {
+        "place": "新潟",
+        "prec_no": 54,
+        "block_no": 47604
+    },
+    "金沢": {
+        "place": "金沢",
+        "prec_no": 56,
+        "block_no": 47605
+    },
+    "富山": {
+        "place": "富山",
+        "prec_no": 55,
+        "block_no": 47607
+    },
+    "長野": {
+        "place": "長野",
+        "prec_no": 48,
+        "block_no": 47610
+    },
+    "宇都宮": {
+        "place": "宇都宮",
+        "prec_no": 41,
+        "block_no": 47615
+    },
+    "福井": {
+        "place": "福井",
+        "prec_no": 57,
+        "block_no": 47616
+    },
+    "前橋": {
+        "place": "前橋",
+        "prec_no": 42,
+        "block_no": 47624
+    },
+    "熊谷": {
+        "place": "熊谷",
+        "prec_no": 43,
+        "block_no": 47626
+    },
+    "水戸": {
+        "place": "水戸",
+        "prec_no": 40,
+        "block_no": 47629
+    },
+    "岐阜": {
+        "place": "岐阜",
+        "prec_no": 52,
+        "block_no": 47632
+    },
+    "名古屋": {
+        "place": "名古屋",
+        "prec_no": 51,
+        "block_no": 47636
+    },
+    "甲府": {
+        "place": "甲府",
+        "prec_no": 49,
+        "block_no": 47638
+    },
+    "銚子": {
+        "place": "銚子",
+        "prec_no": 45,
+        "block_no": 47648
+    },
+    "津": {
+        "place": "津",
+        "prec_no": 53,
+        "block_no": 47651
+    },
+    "静岡": {
+        "place": "静岡",
+        "prec_no": 50,
+        "block_no": 47656
+    },
+    "横浜": {
+        "place": "横浜",
+        "prec_no": 46,
+        "block_no": 47670
+    },
+    "松江": {
+        "place": "松江",
+        "prec_no": 68,
+        "block_no": 47741
+    },
+    "鳥取": {
+        "place": "鳥取",
+        "prec_no": 69,
+        "block_no": 47746
+    },
+    "京都": {
+        "place": "京都",
+        "prec_no": 61,
+        "block_no": 47759
+    },
+    "彦根": {
+        "place": "彦根",
+        "prec_no": 60,
+        "block_no": 47761
+    },
+    "広島": {
+        "place": "広島",
+        "prec_no": 67,
+        "block_no": 47765
+    },
+    "岡山": {
+        "place": "岡山",
+        "prec_no": 66,
+        "block_no": 47768
+    },
+    "神戸": {
+        "place": "神戸",
+        "prec_no": 63,
+        "block_no": 47770
+    },
+    "和歌山": {
+        "place": "和歌山",
+        "prec_no": 65,
+        "block_no": 47777
+    },
+    "奈良": {
+        "place": "奈良",
+        "prec_no": 64,
+        "block_no": 47780
+    },
+    "松山": {
+        "place": "松山",
+        "prec_no": 73,
+        "block_no": 47887
+    },
+    "高松": {
+        "place": "高松",
+        "prec_no": 72,
+        "block_no": 47891
+    },
+    "高知": {
+        "place": "高知",
+        "prec_no": 74,
+        "block_no": 47893
+    },
+    "徳島": {
+        "place": "徳島",
+        "prec_no": 71,
+        "block_no": 47895
+    },
+    "下関": {
+        "place": "下関",
+        "prec_no": 81,
+        "block_no": 47762
+    },
+    "福岡": {
+        "place": "福岡",
+        "prec_no": 82,
+        "block_no": 47807
+    },
+    "佐賀": {
+        "place": "佐賀",
+        "prec_no": 85,
+        "block_no": 47813
+    },
+    "大分": {
+        "place": "大分",
+        "prec_no": 83,
+        "block_no": 47815
+    },
+    "長崎": {
+        "place": "長崎",
+        "prec_no": 84,
+        "block_no": 47817
+    },
+    "熊本": {
+        "place": "熊本",
+        "prec_no": 86,
+        "block_no": 47819
+    },
+    "鹿児島": {
+        "place": "鹿児島",
+        "prec_no": 88,
+        "block_no": 47827
+    },
+    "宮崎": {
+        "place": "宮崎",
+        "prec_no": 87,
+        "block_no": 47830
+    }
+}
