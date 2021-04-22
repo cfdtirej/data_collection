@@ -2,8 +2,8 @@
 __pycache__
 
 # collected data
-hokuriku/demand_csv/*
-owmapi/data/*
+demand_csv/
+data/
 
 # configuration
 settings.yaml
