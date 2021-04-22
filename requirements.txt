@@ -1,0 +1,7 @@
+influxdb
+numpy
+pandas
+requests
+pytz
+PyYAML
+

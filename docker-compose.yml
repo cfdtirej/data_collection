@@ -1,0 +1,12 @@
+version: '3'
+services:
+  python:
+    build: .
+    volumes:
+      - ./src:/usr/src
+    tty: true
+    restart: always
+
+volumes:
+  src:
+
