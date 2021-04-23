@@ -43,19 +43,31 @@ past_url = f'https://www.data.jma.go.jp/obd/stats/etrn/view/hourly_s1.php?prec_n
 res = requests.get(past_url)
 res.encoding = res.apparent_encoding
 
-soup = BeautifulSoup(res.text)
+soup = BeautifulSoup(res.text, 'html.parser')
 table_rows = soup.findAll('tr',class_='mtx')
-print(table_rows)
+# print(table_rows)
 data_table = [settings.wheater_tb_columns]
 for tr in table_rows:
     td = tr.findAll('td')
-    img = [[i['src'], i['alt']] for i in tr.findAll('img')]
-    
-    # print(td)
-    print(img,alt)
-    if data:
-        data_table.append(data)
+    row = [t.string for t in td]
+    img = tr.findAll('img')
+    src = img[0]['src'] if len(img) else ''
+    alt = img[0]['alt'] if len(img) else ''
 
+    # for i in img:
+        # if not i:
+        #     print('Not found')
+        # else:
+        #     print(i)
+    #     print(bool(i))
+    # print('======')
+    # print(row)
+    # print(td)
+    # print(img,alt)
+    # print(img)
+    if len(row) > 0:
+        data_table.append(row)
+# print(data_table)
 
 # print(data_table)
 if __name__ == '__main__':
