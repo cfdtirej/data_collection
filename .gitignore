@@ -4,6 +4,7 @@ __pycache__
 # collected data
 demand_csv/
 data/
+past_weather/
 
 # configuration
 settings.yaml

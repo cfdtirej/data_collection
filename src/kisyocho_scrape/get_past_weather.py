@@ -11,6 +11,7 @@ import requests
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 import settings
 import schemas
@@ -50,19 +51,27 @@ def get_past_weather_table(area: str, year_: str, month_: str, day_: str) -> Lis
         
     return data_table
 
+def check_path(filepath: Path) -> None:
+    if not filepath.parent.is_dir():
+        filepath.parent.mkdir(parents=True)
+    if not filepath.exists():
+        filepath.touch()
 
-def weather_csv_write_all() -> None:
+def weather_csv_write_all(start_date: str = '2002-01-01') -> None:
     yesterday: datetime = datetime.now() - timedelta(days=1)
-    for ts in pd.date_range('2002-01-01', yesterday.date(), freq='D'):
-        ts: datetime = datetime.strptime(str(ts), '%Y-%m-%d %H:%M:%S').astimezone(tz_jst)
+    for ts in tqdm(pd.date_range(start_date, yesterday.date(), freq='D')):
+        ts = datetime.strptime(str(ts), '%Y-%m-%d %H:%M:%S').astimezone(tz_jst)
         for area in settings.place46_no.keys():
             weather_table = get_past_weather_table(area, ts.year, ts.month, ts.day)
-            print(ts,area,len(weather_table))
+            rec_csvfile = Path(__file__).parent / 'past_weather' / f'{area}' / f'{ts.year}' / f'{ts.date()}.csv'
+            check_path(rec_csvfile)
+            with open(rec_csvfile, 'w') as f:
+                writer = csv.writer(f)
+                writer.writerows(weather_table)
+            time.sleep(1)
     return
+
 weather_csv_write_all()
-
-# print(type(yesterday))
-
 
 if __name__ == '__main__':
    data = get_past_weather_table('札幌',2020,1,2)
