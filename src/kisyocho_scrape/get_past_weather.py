@@ -17,58 +17,37 @@ import schemas
 
 
 def get_past_weather_table(area: str, year_: str, month_: str, day_: str) -> List[str]:
-    data_table = [settings.wheater_tb_columns]
     if not area in settings.place46_no.keys():
         raise f'{area}以外の地域を選択してください'
     area_numbers: schemas.PlaceNo = settings.place46_no[area]
-    prec_no, block_no = area_numbers['prec_no'], area_numbers['block_no']
-    url = f'https://www.data.jma.go.jp/obd/stats/etrn/view/hourly_s1.php?prec_no={prec_no}&block_no=47605&year={year_}&month={month_}&day={day_}&view='
+    prec_no: int =  area_numbers['prec_no']
+    block_no: int = area_numbers['block_no']
     
     # request to kishocho
+    url: str = f'https://www.data.jma.go.jp/obd/stats/etrn/view/hourly_s1.php?prec_no={prec_no}&block_no=47605&year={year_}&month={month_}&day={day_}&view='
     response = requests.get(url)
     response.encoding = response.apparent_encoding
-    soup = BeautifulSoup(response.text)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    data_table: List[List[str]] = [settings.wheater_tb_columns]
     for tr in soup.findAll('tr', class_='mtx'):
         td = tr.findAll('td')
-        row = [t.string for t in td]
-        if len(row):
-            data_table.append(row)
+        row: List[str] = [t.string for t in td]
+        img = tr.findAll('img')
+        icon: str = img[0]['src'] if len(img) else ''
+        alt: str = img[0]['alt'] if len(img) else ''
+        data = []
+        for idx, val in enumerate(row):
+            if idx == 14:
+                data.append(alt)
+            else:
+                data.append(val)
+        if len(data) > 0:
+            data.insert(15, icon)
+            data_table.append(data)
+        
     return data_table
 
-_year = '2002'
-_month = '2'
-_day = '1'
-past_url = f'https://www.data.jma.go.jp/obd/stats/etrn/view/hourly_s1.php?prec_no=56&block_no=47605&year={_year}&month={_month}&day={_day}&view='
 
-res = requests.get(past_url)
-res.encoding = res.apparent_encoding
-
-soup = BeautifulSoup(res.text, 'html.parser')
-table_rows = soup.findAll('tr',class_='mtx')
-# print(table_rows)
-data_table = [settings.wheater_tb_columns]
-for tr in table_rows:
-    td = tr.findAll('td')
-    row = [t.string for t in td]
-    img = tr.findAll('img')
-    src = img[0]['src'] if len(img) else ''
-    alt = img[0]['alt'] if len(img) else ''
-
-    # for i in img:
-        # if not i:
-        #     print('Not found')
-        # else:
-        #     print(i)
-    #     print(bool(i))
-    # print('======')
-    # print(row)
-    # print(td)
-    # print(img,alt)
-    # print(img)
-    if len(row) > 0:
-        data_table.append(row)
-# print(data_table)
-
-# print(data_table)
 if __name__ == '__main__':
-    pass
+    get_past_weather_table('金沢',2020,1,2)
