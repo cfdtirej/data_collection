@@ -68,8 +68,11 @@ def weather_csv_write_all(start_date: str = '2002-01-01') -> None:
             with open(rec_csvfile, 'w') as f:
                 writer = csv.writer(f)
                 writer.writerows(weather_table)
-            time.sleep(1)
+            time.sleep(0.2)
     return
+
+# def weather_csv_place(place, start_date) -> List[str]:
+
 
 weather_csv_write_all()
 
