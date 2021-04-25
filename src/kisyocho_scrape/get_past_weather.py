@@ -19,7 +19,7 @@ import schemas
 
 tz_jst = pytz.timezone('Asia/Tokyo')
 
-def get_past_weather_table(area: str, year_: str, month_: str, day_: str) -> List[str]:
+def get_past_weather_table(area: str, year_: int, month_: int, day_: int) -> List[str]:
     if not area in settings.place46_no.keys():
         raise f'{area}以外の地域を選択してください'
     area_numbers: schemas.PlaceNo = settings.place46_no[area]
