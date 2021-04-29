@@ -48,14 +48,15 @@ def get_past_weather_table(area: str, year_: int, month_: int, day_: int) -> Lis
         if len(data) > 0:
             data.insert(15, icon)
             data_table.append(data)
-        
     return data_table
+
 
 def check_path(filepath: Path) -> None:
     if not filepath.parent.is_dir():
         filepath.parent.mkdir(parents=True)
     if not filepath.exists():
         filepath.touch()
+
 
 def weather_csv_write_all(start_date: str = '2002-01-01') -> None:
     yesterday: datetime = datetime.now() - timedelta(days=1)
